@@ -1,11 +1,11 @@
 package com.chnherb.boot.config;
 
 import ch.qos.logback.core.db.DBHelper;
+import com.chnherb.boot.bean.Car;
 import com.chnherb.boot.bean.User;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.*;
+import org.springframework.stereotype.Component;
 
 /**
  * 1. 配置类里面使用 @Bean 标注在方法上给容器注册组件，默认是单实例的
@@ -13,6 +13,12 @@ import org.springframework.context.annotation.ImportResource;
  * 3. proxyBeanMethods: 代理 bean 的方法
  *      Full(proxyBeanMethods = true, 默认)
  *      Lite(proxyBeanMethods = false)
+ */
+
+@EnableConfigurationProperties(Car.class)
+/**
+ * 1.开启 Car 配置绑定功能
+ * 2.将 Car 组件自动注入到容器中
  */
 
 @Import({User.class, DBHelper.class})

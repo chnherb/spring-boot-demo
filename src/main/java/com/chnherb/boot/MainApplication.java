@@ -1,6 +1,7 @@
 package com.chnherb.boot;
 
 import ch.qos.logback.core.db.DBHelper;
+import com.chnherb.boot.bean.Car;
 import com.chnherb.boot.bean.User;
 import com.chnherb.boot.config.BeanConfig;
 import org.springframework.boot.SpringApplication;
@@ -45,6 +46,10 @@ public class MainApplication {
         }
         DBHelper dbHelper = ctx.getBean(DBHelper.class);
         System.out.println(dbHelper); // id 为全类名
+
+        // ConfigurationProperties
+        Car myCar = ctx.getBean(Car.class);
+        System.out.println(myCar.getBrand() + "," + myCar.getPrice());
 
     }
 }
