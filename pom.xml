@@ -7,6 +7,61 @@
     <groupId>com.chnherb</groupId>
     <artifactId>spring-boot-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!-- &lt;!&ndash; 否则 spring-boot-starter-parent 无法加载 -->
+    <!--    <packaging>pom</packaging> -->
+    <!-- 配成 pom 加载不到 application.properties 等配置文件，配置成 jar 可以（不配默认是 jar），此时配置文件也会有 LSP 提示-->
+    <!--    <packaging>jar</packaging>-->
 
+    <!--
+    4.1 Create the POM: https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.first-application.pom
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.0.RELEASE</version>
+    </parent>
+    <properties>
+        <snakeyaml.version>1.30</snakeyaml.version>
+    </properties>
 
+    <!--
+    Adding Classpath Dependencies
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--        <resources>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/java</directory>-->
+        <!--                <includes>-->
+        <!--                    <include>**/*.*</include>-->
+        <!--                </includes>-->
+        <!--            </resource>-->
+        <!--            <resource>-->
+        <!--                <directory>src/main/resources</directory>-->
+        <!--                <includes>-->
+        <!--                    <include>**/*.*</include>-->
+        <!--                </includes>-->
+        <!--            </resource>-->
+        <!--        </resources>-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
