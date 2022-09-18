@@ -21,7 +21,7 @@
         <version>2.3.0.RELEASE</version>
     </parent>
     <properties>
-        <snakeyaml.version>1.30</snakeyaml.version>
+        <!--        <snakeyaml.version>1.30</snakeyaml.version>-->
     </properties>
 
     <!--
