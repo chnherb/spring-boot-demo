@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head lang="en">
+    <title>Spring Boot</title>
+</head>
+<body>
+测试 REST：
+<form action="/user" method="get">
+    <input value="REST-GET SUBMIT" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input value="REST-POST SUBMIT" type="submit"/>
+</form>
+无效：
+<form action="/user" method="put">
+    <input value="REST-PUT SUBMIT" type="submit"/>
+</form>
+<form action="/user" method="delete">
+    <input value="REST-DELETE SUBMIT" type="submit"/>
+</form>
+有效：
+<form action="/user" method="post">
+    <input name="_method", type="hidden" value="PUT">
+    <input value="REST-PUT SUBMIT" type="submit"/>
+</form>
+<form action="/user" method="post">
+    <input name="_method", type="hidden" value="DELETE">
+    <input value="REST-DELETE SUBMIT" type="submit"/>
+</form>
+</body>
+</html>
