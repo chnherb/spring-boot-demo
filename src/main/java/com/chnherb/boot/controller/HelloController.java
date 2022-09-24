@@ -12,8 +12,8 @@ public class HelloController {
     // 可以直接配置在类上
     // @ResponseBody
     @RequestMapping("/hello")
-    public String hello() {
-        return "Hello World";
+    public String hello(@RequestParam("username") String name) {
+        return "Hello World! " + name;
     }
 
     // 测试 REST

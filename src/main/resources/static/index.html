@@ -26,5 +26,28 @@
     <input name="_method", type="hidden" value="DELETE">
     <input value="REST-DELETE SUBMIT" type="submit"/>
 </form>
+
+测试基本注解：
+<ul>
+    <a href="user/1001/name/zhangsan?age=20&number=1234&interest=ball&interest=game">user/{id}/name/{username}</a>
+    <li>@PathVariable（路径变量）</li>
+    <li>@RequestHeader（获取请求头）</li>
+    <li>@RequestParam（获取请求头参数）</li>
+    <li>@CookieValue（获取 cookie 值）</li>
+    <li>@RequestBody（获取请求体 POST ）</li>
+    <li>@RequestAttribute（获取 request 域属性）</li>
+    <li>@MatrixVariable（矩阵变量）</li>
+</ul>
+@RequestBody（获取请求体 POST ）
+<form action="/save", method="post">
+    @RequestBody（获取请求体 POST ）<br>
+    用户：<input name="usernmae" /> <br>
+    邮箱：<input name="email"/> <br>
+    <input type="submit" value="提交"/>
+</form>
+矩阵变量
+<a href="/cars/sell;low=21;brand=byd,dazhong,aodi">MatrixVariable</a> <br>
+<a href="/cars/sell;low=21;brand=byd;brand=baoma;brand=aodi">MatrixVariable</a> <br>
+<a href="/boss/1;age=22/3;age=18">MatrixVariable /boos/{boosId}/{empId}</a> <br>
 </body>
 </html>
