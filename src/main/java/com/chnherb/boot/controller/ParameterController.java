@@ -1,5 +1,6 @@
 package com.chnherb.boot.controller;
 
+import com.chnherb.boot.bean.User;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +45,12 @@ public class ParameterController {
         Map<String, Object> map = new HashMap<>();
         map.put("content", content);
         return map;
+    }
+
+    // 页面提交的数据（GET、POST）请求都可以和对象属性进行绑定
+    @PostMapping("/saveUser")
+    public User saveUser(User user) {
+        return user;
     }
 
     // 1、语法：/cars/sell;low=23;brand=byd,audi,dazhong
