@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "mycar")
 public class Car {
     private String brand;
-    private String price;
+    private Integer price;
 
     public String getBrand() {
         return brand;
@@ -17,11 +17,11 @@ public class Car {
         this.brand = brand;
     }
 
-    public String getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 }

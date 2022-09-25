@@ -4,6 +4,7 @@ public class User {
     int number;
     String name;
     int age;
+    Car car;
 
     public User() {
 
@@ -35,5 +36,14 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 }
