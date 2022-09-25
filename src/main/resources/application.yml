@@ -5,4 +5,4 @@ spring:
         enabled: true
 
     contentnegotiation:
-      favor-parameter: true # 开启请求参数内容协商模式
+      favor-parameter: true # 开启请求参数内容协商模式，仅支持 format=json 或 format=xml 两种参数
