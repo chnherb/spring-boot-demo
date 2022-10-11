@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+</head>
+<body>
+<div>
+    <form role="form" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+        <div>
+            <label>邮箱</label>
+            <input type="email" name="email" value="abc@qq.com">
+        </div>
+        <div>
+            <label>姓名</label>
+            <input type="text" name="username" value="zhangsan">
+        </div>
+        <div>
+            <label>头像</label>
+            <input type="file" name="header">
+        </div>
+        <div>
+            <label>生活照</label>
+            <input type="file" name="photos" multiple>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</div>
+</body>
