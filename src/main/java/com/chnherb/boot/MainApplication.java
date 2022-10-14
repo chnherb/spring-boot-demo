@@ -6,9 +6,11 @@ import com.chnherb.boot.bean.User;
 import com.chnherb.boot.config.BeanConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+@ServletComponentScan(basePackages = "com.chnherb.boot")
 @SpringBootApplication
 public class MainApplication {
     public static void main(String[] args) {
@@ -41,7 +43,7 @@ public class MainApplication {
         // 5. 获取组件
         String[] beanNamesForType = ctx.getBeanNamesForType(User.class);
         System.out.println("beanNamesForType====");
-        for (String s: beanNamesForType) {
+        for (String s : beanNamesForType) {
             System.out.println(s);
         }
         DBHelper dbHelper = ctx.getBean(DBHelper.class);
