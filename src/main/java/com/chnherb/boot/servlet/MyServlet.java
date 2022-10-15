@@ -11,7 +11,7 @@ import java.io.IOException;
  * 还需要在启动类中配置注解：
  * @ServletComponentScan(basePackages = "com.chnherb.boot")
  */
-@WebServlet(urlPatterns = "/my")
+//@WebServlet(urlPatterns = "/my")
 public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
