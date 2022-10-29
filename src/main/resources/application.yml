@@ -13,7 +13,7 @@ spring:
     username: root
     password: root1234
     driver-class-name: com.mysql.jdbc.Driver
-  #    type: com.zaxxer.hikari.HikariDataSource
+    #    type: com.zaxxer.hikari.HikariDataSource
     druid:
       aop-patterns: com.chnherb.boot
       filters: stat,wall,slf4j
@@ -42,3 +42,11 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
+
+# 配置mybatis规则
+mybatis:
+  # config-location 和 configuration 不能同时定义
+  # config-location: classpath:mybatis/mybatis-config.xml  #全局配置文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml  #sql映射文件位置
+  configuration:
+    map-underscore-to-camel-case: true
