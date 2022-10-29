@@ -7,6 +7,14 @@ spring:
     contentnegotiation:
       favor-parameter: true # 开启请求参数内容协商模式，仅支持 format=json 或 format=xml 两种参数
 
+  # 导入相关包不配置启动会报错
+  datasource:
+    url: jdbc:mysql://localhost:3306/Demo
+    username: root
+    password: root1234
+    driver-class-name: com.mysql.jdbc.Driver
+  #    type: com.zaxxer.hikari.HikariDataSource
+
   servlet:
     multipart:
       max-file-size: 10MB
