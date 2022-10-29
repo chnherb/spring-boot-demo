@@ -14,6 +14,29 @@ spring:
     password: root1234
     driver-class-name: com.mysql.jdbc.Driver
   #    type: com.zaxxer.hikari.HikariDataSource
+    druid:
+      aop-patterns: com.chnherb.boot
+      filters: stat,wall,slf4j
+      filter:
+        stat:
+          enabled: true
+          slow-sql-millis: 1000
+          log-slow-sql: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+      stat-view-servlet:
+        enabled: true
+        login-username: bo
+        login-password: 123456
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+
 
   servlet:
     multipart:

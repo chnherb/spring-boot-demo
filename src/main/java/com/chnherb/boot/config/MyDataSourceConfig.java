@@ -13,7 +13,8 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-@Configuration
+@Deprecated
+//@Configuration
 public class MyDataSourceConfig {
     // 参考：org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration.PooledDataSourceConfiguration
     // org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.Hikari.dataSource
