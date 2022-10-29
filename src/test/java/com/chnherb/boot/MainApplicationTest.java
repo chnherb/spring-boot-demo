@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.sql.DataSource;
+
 import static org.junit.Assert.*;
 
 @Slf4j
@@ -18,11 +20,16 @@ public class MainApplicationTest {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    DataSource dataSource;
+
     @Test
     public void contextLoads() {
 //        jdbcTemplate.queryForObject("select * from user");
 //        jdbcTemplate.queryForList("select * from user", )
         Long count = jdbcTemplate.queryForObject("select count(*) from user", Long.class);
         log.info("count: {}", count);
+
+        log.info("datasource type: {}", dataSource.getClass());
     }
 }
